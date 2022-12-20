@@ -3,4 +3,4 @@ This repository is for showcasing skills, sharing projects, and tracking my prog
 
 ## Contents
 ### 📊 Data Analysis and Visualization
-[**Bebop Grilled Cheese**] (https://github.com/AllyBMa/Portfolio/tree/main/Bebop%20Grilled%20Cheese)
+[**Bebop Grilled Cheese**](https://github.com/AllyBMa/Portfolio/tree/main/Bebop%20Grilled%20Cheese)
