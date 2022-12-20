@@ -20,6 +20,7 @@ The co-founders provided you with a copy of the operations report for the fiscal
 
 ## 2. Data
 [Data set](https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/bebopSalesTransactions_2022.csv)
+
 Contains 195,728 itemized sales transactions and the following 12 variables: FY, SalesDate, month, weekDay, truckID, orderID, lineItemID, group, item, price, q, cost
   - FY = refers to the company’s fiscal year which runs from 2021-11-01 to 2022-10-31.
   - SalesDate = sales date.
@@ -61,3 +62,6 @@ dt1 <- dt0 %>%
 glimpse(dt1)
 ```
 ### Panel 1
+Our first panel was to provide an overview of sales revenue, cogs, gross profit, and pross margin sales revenue and gross margin by month for BGC (total company) and for each of the trucks, so we included three elements.
+
+My teammates provided the overview in dollars for BGC, and the analysis by month by truck/BGC
