@@ -43,4 +43,21 @@ options(scipen = 99)
 # import and view data
 dt0 <- read_csv("bebopSalesTransactions_2022.csv")
 glimpse(dt0)
+# check for missing data
+dt0 %>% is.na() %>% colSums()
 ```
+Perfect, no missing data.
+However, there are some variables that will come in handy. Revenue is something that management wanted to examine, as well as a main input along with cogs for gross profit and gross profit margin.
+```R
+# new data set with revenue, cost of goods sold, 
+# gross profit, and gross profit margin
+dt1 <- dt0 %>% 
+  mutate(
+    revenue = price*q,
+    cogs = cost*q,
+    gp = revenue - cogs,
+    gpm = gp/revenue
+  )
+glimpse(dt1)
+```
+### Panel 1
