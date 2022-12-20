@@ -90,15 +90,6 @@ You can include R code in the document as follows:
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-    ## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
-    ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-    ## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-    ## ✔ readr   2.1.3      ✔ forcats 0.5.2 
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-
 ``` r
 # prevent scientific notation
 options(scipen = 99)
@@ -106,15 +97,6 @@ options(scipen = 99)
 dt0 <- read_csv("bebopSalesTransactions_2022.csv")
 ```
 
-    ## Rows: 195728 Columns: 12
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr  (6): weekDay, truckID, orderID, lineItemID, group, item
-    ## dbl  (5): FY, month, price, q, cost
-    ## date (1): SalesDate
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 ``` r
 glimpse(dt0)
