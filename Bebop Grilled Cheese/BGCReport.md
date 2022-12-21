@@ -2,6 +2,9 @@
 # Bebop Grilled Cheese
 
 ### Dashboard Case Competition
+[Slide Deck](https://docs.google.com/presentation/d/1BUViQzBinnrTucMa8VBoUkBDMBjJqnkqcRqTVfaVCVc/edit?usp=sharing)
+
+Presentation - link to be added soon
 
 Note: This project was undertaken in a team of five. The code and
 analysis contained in this repo is primarily my individual contribution;
