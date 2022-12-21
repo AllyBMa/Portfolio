@@ -16,12 +16,12 @@ with four to five panels.
 
 ## Table of Contents
 
-1.  Case Description
-2.  Data Description
-3.  Data Processing and Analysis
-4.  Data Visualization
-5.  Key Points
-6.  Recommendation
+1.  [Case Description](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#1-case-description)
+2.  [Data Description](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#2-data-description)
+3.  [Data Processing and Analysis](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#3-data-processing-and-analysis)
+4.  [Data Visualization](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#4-data-visualization)
+5.  [Key Points](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#5-key-points)
+6.  [Recommendation](AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/BGCReport.md#6-recommendation)
 
 ## 1. Case Description
 
@@ -92,35 +92,10 @@ group, item, price, q, cost
 ``` r
 # attaching necessary packages
 library(tidyverse)
-```
-
-    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-    ## ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
-    ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
-    ## ✔ tidyr   1.2.1      ✔ stringr 1.4.1 
-    ## ✔ readr   2.1.3      ✔ forcats 0.5.2 
-    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-
-``` r
 # prevent scientific notation
 options(scipen = 99)
 # import and view data
 dt0 <- read_csv("bebopSalesTransactions_2022.csv")
-```
-
-    ## Rows: 195728 Columns: 12
-    ## ── Column specification ────────────────────────────────────────────────────────
-    ## Delimiter: ","
-    ## chr  (6): weekDay, truckID, orderID, lineItemID, group, item
-    ## dbl  (5): FY, month, price, q, cost
-    ## date (1): SalesDate
-    ## 
-    ## ℹ Use `spec()` to retrieve the full column specification for this data.
-    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-
-``` r
 glimpse(dt0)
 ```
 
@@ -210,12 +185,6 @@ panelone <- dt1 %>%
             SUMgp = sum(gp),
             SUMgpm = sum(gpm)
             )
-```
-
-    ## `summarise()` has grouped output by 'month'. You can override using the
-    ## `.groups` argument.
-
-``` r
 panelone #revenue, cogs, gp, and gpm of each truck by month
 ```
 
@@ -316,12 +285,6 @@ dtprice # average price of item across food trucks
 dtq <-dt1 %>%
   group_by(group, item, truckID)%>%
   summarize(SUMq=sum(q))
-```
-
-    ## `summarise()` has grouped output by 'group', 'item'. You can override using the
-    ## `.groups` argument.
-
-``` r
 dtq # number of each item sold at each truck
 ```
 
@@ -344,8 +307,6 @@ dtq # number of each item sold at each truck
 ``` r
 panelthree <- full_join(dtprice, dtq) #combine price and q
 ```
-
-    ## Joining, by = "item"
 
 Note: There was an error in the case, it said prices of each item varied
 across the food trucks, but the prices in the data did not. As such
@@ -396,12 +357,6 @@ dtgroup <- dt1 %>%
   select(truckID, group, gpm) %>% 
   summarize(groupPM = mean(gpm)) %>% 
   distinct()
-```
-
-    ## `summarise()` has grouped output by 'group'. You can override using the
-    ## `.groups` argument.
-
-``` r
 dtgroup # profit margin of each group
 ```
 
@@ -433,14 +388,9 @@ Main is consistently under target.
 
 ## 4. Data Visualization
 
-Our dashboard prepared using Google Sheets and was built to follow
-[Tufte’s Principles for
-Visualization](https://docs.google.com/presentation/d/11FFz8X6pH8nGrmIDJbvRfTDCdPK60Ii9RAuQmiFvBm4/edit#slide=id.g19a0f2ce771_0_272).
-Interactive functionality on Google Sheets is limited, but we used
-VLOOKUP and data validation to update the entire dashboard with a change
-to one cell, outlined in purple beside Truck Selection. Conditional
-formatting and data point formatting were used to keep a consistent
-colour and labelling scheme.
+Our dashboard prepared using Google Sheets and was built to follow [Tufte’s Principles for Visualization](https://docs.google.com/presentation/d/11FFz8X6pH8nGrmIDJbvRfTDCdPK60Ii9RAuQmiFvBm4/edit#slide=id.g19a0f2ce771_0_272). Interactive functionality on Google Sheets is limited, but we used VLOOKUP and data validation to update the entire dashboard with a change to one cell, outlined in purple beside Truck Selection. Each chart can also be selected and hovered over for more details. Conditional formatting and data point formatting were used to keep a consistent colour and labelling scheme.
+
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Dashboard%20Demo.gif" height="500" />
 
 ### Panel 1
 
@@ -458,15 +408,15 @@ great.
 
 ### Panel 2
 
-**Element 1:** Used
-`=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$A$4:$V$8,B11,false)`
+**Element 1:** Used `=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$A$4:$V$8,B11,false)`
 to find the revenue earned by each item of the truck selected. Created a
-column chart from these values. **Element 2:** Used
-`=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$A$23:$E$29,2,false)`
+column chart from these values. 
+
+**Element 2:** Used `=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$A$23:$E$29,2,false)`
 to find the percentage of revenue that each product group made up for
-the selected truck. Used these values to create a donut chart. **Element
-3:** Used
-`=FILTER('Panel 2 Pivot'!$12:$12, 'Panel 2 Pivot'!$13:$13 = LARGE('Panel 2 Pivot'!$13:$13,1))`,
+the selected truck. Used these values to create a donut chart. 
+
+**Element 3:** Used `=FILTER('Panel 2 Pivot'!$12:$12, 'Panel 2 Pivot'!$13:$13 = LARGE('Panel 2 Pivot'!$13:$13,1))`,
 with the last argument of `LARGE` being 1, 2, and 3 to display the name
 of the items that made the first, second, and third most revenue
 respectively for the selected truck.
@@ -489,11 +439,13 @@ trucks each day of the week.
 
 ### Panel 5
 
-**Element:** Used
+**Element 1:** Used
 `=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$G$1:$AB$8,H10,false)`
 to find the profit margin of each item for the selected truck. Created a
 column chart with scale up to 100%, essentially working as multiple
-gauges. **Element:** Used
+gauges. 
+
+**Element 2:** Used
 `=vlookup(If(Dashboard!$I$2="BGC (all)","Grand Total",Dashboard!$I$2),$E$1:$I$7,2,false)`
 to find the profit margin of each group and truck specific menu for the
 selected truck. Created a column chart with scale up to 100%,
@@ -501,41 +453,30 @@ essentially working as multiple gauges.
 
 ## 5. Key Points
 
-Panel 1 (Teammate) \* Gross profit and revenue are highest in the months
-May to October, where all four trucks are running \* At 70.6%, the truck
-uniDistFY is the only one that meets the gross profit target of 70% \*
-Other trucks under target by 0.6% to 2.7% resulting in BGC’s overall
-gross profit margin also just below target at 69.2
+**Panel 1** (Teammate) 
+- Gross profit and revenue are highest in the months May to October, where all four trucks are running 
+- At 70.6%, the truck uniDistFY is the only one that meets the gross profit target of 70% 
+- Other trucks under target by 0.6% to 2.7% resulting in BGC’s overall gross profit margin also just below target at 69.2
 
-Panel 2 \* Main product category makes up bulk of revenues, 61% for BGC
-as a whole and from 56.80% to 66.86% for each of the trucks \* Hand-Cut
-Truffle Fries and Honey Bacon on Triple Cheese Melt appear in the top
-three list of product items that generate the most revenue for every
-truck and the overall company
+**Panel 2**
+- Main product category makes up bulk of revenues, 61% for BGC as a whole and from 56.80% to 66.86% for each of the trucks
+- Hand-Cut Truffle Fries and Honey Bacon on Triple Cheese Melt appear in the top three list of product items that generate the most revenue for every truck and the overall company
 
-Panel 3 (Teammate) \* There is an inverse relationship between average
-item price and sales quantity. As the average item price rises, the
-quantity bought falls
+**Panel 3** (Teammate)
+- There is an inverse relationship between average item price and sales quantity. As the average item price rises, the quantity bought falls
 
-Panel 4 (Teammate) \* Truck metroFY makes the highest quantity of sales
-on Friday \* Even though specEventHY only operates Friday to Sunday, on
-its operational days it still sells below or similar to average \* On
-average, trucks make the highest quantity of sales on Monday
+**Panel 4** (Teammate) 
+- Truck metroFY makes the highest quantity of sales on Friday 
+- Even though specEventHY only operates Friday to Sunday, on its operational days it still sells below or similar to average
+- On average, trucks make the highest quantity of sales on Monday
 
-Panel 5 \* Coffee is the item with highest profit margin, at 83.22%;
-followed by Redbull at 80.91%; and Polar Soda at 76.67% \* The items
-with the lowest profit margin of 61% are Strawberry Banana Juice, Double
-Fried Chicken Sandwich, Veggie Burger, and Vegan Veggie Burger \* Drink
-product group has highest profit margin for all trucks except for
-specEventHY
+**Panel 5**
+- Coffee is the item with highest profit margin, at 83.22%; followed by Redbull at 80.91%; and Polar Soda at 76.67%
+- The items with the lowest profit margin of 61% are Strawberry Banana Juice, Double Fried Chicken Sandwich, Veggie Burger, and Vegan Veggie Burger
+- Drink product group has highest profit margin for all trucks except for specEventHY
 
 ## 6. Recommendation
 
-To increase BGC’s gross profit margin and meet the targeted 70% in the
-next fiscal year, BGC Management should take the following two actions:
-\* Remove Strawberry Banana Juice and promote other drinks, or reduce
-the costs. It is only offered by truck suburbHY. Though it is a popular
-item, the most sold at that truck, it is one of the items with the
-lowest profit margin. \* Widen availability of Coffee. Currently only
-offered by truck metroFY, but has the highest profit margin of all BGC’s
-offerings.
+To increase BGC’s gross profit margin and meet the targeted 70% in the next fiscal year, BGC Management should take the following two actions:
+- Remove Strawberry Banana Juice and promote other drinks, or reduce the costs. It is only offered by truck suburbHY. Though it is a popular item, the most sold at that truck, it is one of the items with the lowest profit margin. 
+- Widen availability of Coffee. Currently only offered by truck metroFY, but has the highest profit margin of all BGC’s offerings.
