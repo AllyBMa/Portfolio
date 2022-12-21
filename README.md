@@ -1,5 +1,5 @@
 # Ally Ma - Data Analytics Portfolio
-This repository is for showcasing skills, sharing projects, and tracking my progress as I learn
+This repository is for showcasing skills, sharing projects, and tracking my progress as I learn.
 
 ## Contents
 ### 📊 Data Analysis and Visualization
