@@ -209,7 +209,9 @@ teammate’s chart, I ended up not using the grouping by month.
 
 From these pivot tables we can see the dollar value of COGS and gross
 profit for each truck and BGC as a whole. For example, truck metroFY
-made a gross profit of \$251144.97, and spent \$110859.98 on COGS.
+made a gross profit of \$251144.97, and spent \$110859.98 on COGS. 
+
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel1_COGSpivot.jpg" height="100" /> <img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel1_GPpivot.jpg" height="100" />
 
 ### Panel 2
 
@@ -242,11 +244,13 @@ After pulling out the relevant data, I continued data processing with
 pivot tables. We can see how much revenue each product earns at each
 truck/BGC. For BGC as a whole, Hand-Cut Truffle Fries earn \$160745.39
 of revenue.
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel2_ITEMpivot.jpg" height="100" />
 
 In this table we can see what percentage of revenue each product group
 makes up for each truck/BGC. While Snack makes up \~15% for the other
 trucks, it makes up 31.16% for truck specEventHY. Main is the dominant
 product group for all trucks/BGC.
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel2_GROUPpivot.jpg" height="100" />
 
 ### Panel 3
 
@@ -316,6 +320,8 @@ talk about avg price.
 Once again, the data was processed in pivot tables - one for average
 price and one for quantity. Comparing the two, we see that as average
 price rises, quantity decreases.
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel3_AVGPRICEpivot.jpg" height="100" />
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel3_SALESQpivot.jpg" height="100" />
 
 ### Panel 4
 
@@ -382,9 +388,11 @@ One last time, I placed the data in pivot tables.
 It can be seen that Coffee is the item with the highest profit margin of
 83%; and Strawberry Banana Juice, Double Fried Chicken Sandwich, Vegan
 Veggie Burger, and Veggie Burger have the lowest profit margin of 61%.
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel5_ITEMpivot.jpg" height="100" />
 
 From this pivot table, we see that the profit margin of product group
 Main is consistently under target.
+<img src="https://github.com/AllyBMa/Portfolio/blob/main/Bebop%20Grilled%20Cheese/Media/Panel5_GROUPpivot.jpg" height="100" />
 
 ## 4. Data Visualization
 
