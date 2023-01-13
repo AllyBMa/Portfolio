@@ -1,7 +1,7 @@
 
 # Bebop Grilled Cheese
 
-### Dashboard Case Competition
+### [Dashboard Case Competition](https://uwaterloo.ca/uwaterloo-centre-for-information-system-assurance/scholarships-fellowships-awards/interactive-business-dashboard-competition)
 [Slide Deck](https://docs.google.com/presentation/d/1BUViQzBinnrTucMa8VBoUkBDMBjJqnkqcRqTVfaVCVc/edit?usp=sharing)
 
 Presentation - link to be added soon
